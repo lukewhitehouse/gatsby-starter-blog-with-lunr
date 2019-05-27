@@ -1,0 +1,17 @@
+.search-results-count {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 14px;
+}
+
+.search-results-list {
+  list-style: none;
+}
+
+.search-results-list__heading {
+  margin-bottom: 5px;
+}
+
+.search-results-list__link {
+  box-shadow: none;
+}
