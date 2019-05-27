@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Gatsby Starter Blog With Lunr`,
+    author: `Luke Whitehouse`,
+    description: `A starter blog with added site search.`,
+    siteUrl: `https://gatsby-starter-blog-with-lunr-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `_lukewh`,
     },
   },
   plugins: [
@@ -74,5 +74,28 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-lunr',
+      options: {
+        languages: [{ name: 'en' }],
+        fields: [
+          { name: 'title', store: true, attributes: { boost: 20 } },
+          { name: 'description', store: true, attributes: { boost: 5 }},
+          { name: 'content' },
+          { name: 'url', store: true },
+          { name: 'date', store: true }
+        ],
+        resolvers: {
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            description: node => node.frontmatter.description,
+            content: node => node.rawMarkdownBody,
+            url: node => node.fields.slug,
+            date: node => node.frontmatter.date
+          },
+        },
+        filename: 'search_index.json',
+      },
+    }
   ],
 }
