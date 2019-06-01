@@ -36,7 +36,7 @@ function Bio() {
                 }}
               />
               <p>
-                This project is a fork from <a href="https://github.com/gatsbyjs/gatsby-starter-blog">Gatsby's starter blog</a>, with added Site Search functionality thanks to <a href="https://lunrjs.com/">Lunr.js</a>. It is maintained by <a href="https://twitter.com/_lukewh">{author}</a>, who wrote a tutorial on <a href="https://assortment.io/posts/gatsby-site-search-lunr-js">building this from scratch</a>. 
+                This project is a fork from <a href="https://github.com/gatsbyjs/gatsby-starter-blog">Gatsby's starter blog</a>, with added Site Search functionality thanks to <a href="https://lunrjs.com/">Lunr.js</a>. It is maintained by <a href={social.twitter}>{author}</a>, who wrote a tutorial on <a href="https://assortment.io/posts/gatsby-site-search-lunr-js">building this from scratch</a>. 
               </p>
             </div>
             <p style={{ marginBottom: rhythm(2.5) }}><Link to="/search">Search all posts</Link></p>
