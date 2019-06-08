@@ -18,6 +18,7 @@ const Search = ({
         setResults(posts);
       });
     }
+    if (!searchQuery) setResults([])
   }, [location.search]);
 
   return (
