@@ -75,15 +75,15 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-lunr',
+      resolve: "gatsby-plugin-lunr",
       options: {
-        languages: [{ name: 'en' }],
+        languages: [{ name: "en" }],
         fields: [
-          { name: 'title', store: true, attributes: { boost: 20 } },
-          { name: 'description', store: true, attributes: { boost: 5 }},
-          { name: 'content' },
-          { name: 'url', store: true },
-          { name: 'date', store: true }
+          { name: "title", store: true, attributes: { boost: 20 } },
+          { name: "description", store: true, attributes: { boost: 5 } },
+          { name: "content" },
+          { name: "url", store: true },
+          { name: "date", store: true },
         ],
         resolvers: {
           MarkdownRemark: {
@@ -91,11 +91,11 @@ module.exports = {
             description: node => node.frontmatter.description,
             content: node => node.rawMarkdownBody,
             url: node => node.fields.slug,
-            date: node => node.frontmatter.date
+            date: node => node.frontmatter.date,
           },
         },
-        filename: 'search_index.json',
+        filename: "search_index.json",
       },
-    }
+    },
   ],
 }
